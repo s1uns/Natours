@@ -1,6 +1,7 @@
 @use "../../abstracts/" as a;
 
 .btn {
+    &,
     &:link,
     &:visited {
         text-transform: uppercase;

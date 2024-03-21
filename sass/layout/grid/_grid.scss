@@ -2,7 +2,6 @@
 
 .row {
     max-width: a.$variables-grid-width;
-    background-color: #eee;
     margin: 0 auto;
 
     &:not(:last-child) {
@@ -12,15 +11,11 @@
     @include a.mixins-clearfix;
 
     [class^="col-"] {
-        background-color: orangered;
         float: left;
-        text-align: center;
-        justify-items: center;
-        color: a.$variables-color-white;
+
         &:not(:last-child) {
             margin-right: a.$variables-gutter-horizontal;
         }
-        height: 5rem;
     }
 
     .col-1-of-2 {

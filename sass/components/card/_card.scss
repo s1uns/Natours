@@ -1,0 +1,46 @@
+@use "../../abstracts" as a;
+
+.card {
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position: relative;
+    height: 50rem;
+
+    &__side {
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: wheat;
+        height: 50rem;
+        transition: all 0.8s ease;
+        width: 100%;
+        backface-visibility: hidden;
+        border-radius: 3px;
+        box-shadow: 0 1.5rem 4rem rgba(a.$variables-color-black, 0.25);
+
+        &--front {
+            background-color: a.$variables-color-white;
+        }
+
+        &--back {
+            background-color: green;
+            transform: rotateY(-180deg);
+
+            &-1 {
+                background-image: linear-gradient(
+                    to right bottom,
+                    a.$variables-color-secondary-light,
+                    a.$variables-color-secondary-dark
+                );
+            }
+        }
+    }
+
+    &:hover &__side--front {
+        transform: rotateY(180deg);
+    }
+
+    &:hover &__side--back {
+        transform: rotateY(0);
+    }
+}

@@ -9,7 +9,7 @@
         padding: 1.5rem 4rem;
         display: inline-block;
         border-radius: 10rem;
-        transition: all 0.2s;
+        transition: all 0.4s;
         position: relative;
     }
     &--animated {
@@ -37,6 +37,15 @@
 
         &::after {
             background-color: a.$variables-color-white;
+        }
+    }
+
+    &--green {
+        background-color: a.$variables-color-primary;
+        color: a.$variables-color-white;
+
+        &::after {
+            background-color: a.$variables-color-primary;
         }
     }
 

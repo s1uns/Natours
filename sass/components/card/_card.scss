@@ -1,22 +1,23 @@
 @use "../../abstracts" as a;
 
 .card {
+    //FUNCTIONALITY
     perspective: 150rem;
     -moz-perspective: 150rem;
     position: relative;
-    height: 50rem;
+    height: 52rem;
 
     &__side {
         position: absolute;
         left: 0;
         top: 0;
-        color: wheat;
-        height: 50rem;
+        height: 52rem;
         transition: all 0.8s ease;
         width: 100%;
         backface-visibility: hidden;
         border-radius: 3px;
         box-shadow: 0 1.5rem 4rem rgba(a.$variables-color-black, 0.25);
+        overflow: hidden;
 
         &--front {
             background-color: a.$variables-color-white;
@@ -26,11 +27,25 @@
             background-color: green;
             transform: rotateY(-180deg);
 
-            &-1 {
+            &--1 {
                 background-image: linear-gradient(
                     to right bottom,
                     a.$variables-color-secondary-light,
                     a.$variables-color-secondary-dark
+                );
+            }
+            &--2 {
+                background-image: linear-gradient(
+                    to right bottom,
+                    a.$variables-color-primary-light,
+                    a.$variables-color-primary-dark
+                );
+            }
+            &--3 {
+                background-image: linear-gradient(
+                    to right bottom,
+                    a.$variables-color-tertiary-light,
+                    a.$variables-color-tertiary-dark
                 );
             }
         }
@@ -42,5 +57,123 @@
 
     &:hover &__side--back {
         transform: rotateY(0);
+    }
+
+    //FRONT SIDE STYLING
+    &__picture {
+        background-size: cover;
+        height: 23rem;
+        background-blend-mode: screen;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+
+        &--1 {
+            background-image: linear-gradient(
+                    to right bottom,
+                    a.$variables-color-secondary-light,
+                    a.$variables-color-secondary-dark
+                ),
+                url("../../../img/nat-5.jpg");
+        }
+        &--2 {
+            background-image: linear-gradient(
+                    to right bottom,
+                    a.$variables-color-primary-light,
+                    a.$variables-color-primary-dark
+                ),
+                url("../../../img/nat-6.jpg");
+        }
+        &--3 {
+            background-image: linear-gradient(
+                    to right bottom,
+                    a.$variables-color-tertiary-light,
+                    a.$variables-color-tertiary-dark
+                ),
+                url("../../../img/nat-7.jpg");
+        }
+    }
+
+    &__heading {
+        text-align: right;
+        position: absolute;
+        top: 12rem;
+        right: 2rem;
+        font-size: 2.8rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        color: a.$variables-color-white;
+        width: 65%;
+    }
+
+    &__heading-span {
+        padding: 1rem 1.5rem;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+        &--1 {
+            background-image: linear-gradient(
+                to right bottom,
+                rgba(a.$variables-color-secondary-light, 0.85),
+                rgba(a.$variables-color-secondary-dark, 0.85)
+            );
+        }
+        &--2 {
+            background-image: linear-gradient(
+                to right bottom,
+                rgba(a.$variables-color-primary-light, 0.85),
+                rgba(a.$variables-color-primary-dark, 0.85)
+            );
+        }
+        &--3 {
+            background-image: linear-gradient(
+                to right bottom,
+                rgba(a.$variables-color-tertiary-light, 0.85),
+                rgba(a.$variables-color-tertiary-dark, 0.85)
+            );
+        }
+    }
+
+    &__details {
+        padding: 3rem;
+
+        ul {
+            list-style: none;
+            width: 80%;
+            margin: 0 auto;
+            li {
+                text-align: center;
+                font-size: 1.5rem;
+                padding: 1rem;
+
+                &:not(:last-child) {
+                    border-bottom: solid a.$variables-color-grey-light-2 1px;
+                }
+            }
+        }
+    }
+
+    //BACK SIDE STYLING
+    &__cta {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        text-align: center;
+    }
+
+    &__price-box {
+        margin-bottom: 8rem;
+        color: a.$variables-color-white;
+    }
+
+    &__price-only {
+        font-size: 1.4rem;
+        text-transform: uppercase;
+    }
+    &__price-value {
+        font-size: 6rem;
+        font-weight: 100;
     }
 }

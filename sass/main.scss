@@ -1,8 +1,10 @@
 @use "base";
+@use "components/bg-video";
 @use "components/button";
 @use "components/card";
 @use "components/composition";
 @use "components/feature-box";
+@use "components/story";
 @use "layout/header";
 @use "layout/grid";
 @use "pages/home";

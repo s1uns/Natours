@@ -5,7 +5,7 @@
     margin: 0 auto;
     box-shadow: 0 3rem 6rem rgba(a.$variables-color-black, 0.1);
     background-color: rgba(a.$variables-color-white, 0.6);
-    border-radius: 3px;
+    border-radius: a.$variables-default-border-radius;
     padding: 6rem;
     font-size: a.$variables-default-font-size;
     padding-left: 9rem;

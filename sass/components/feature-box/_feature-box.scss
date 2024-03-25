@@ -5,7 +5,7 @@
     font-size: 1.5rem;
     padding: 2.5rem;
     text-align: center;
-    border-radius: 0.3rem;
+    border-radius: a.$variables-default-border-radius;
     box-shadow: 0 1.5rem 4rem rgba(a.$variables-color-black, 0.25);
     transition: transform 0.3s;
     &__icon {

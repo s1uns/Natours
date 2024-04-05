@@ -155,10 +155,8 @@
 
     //BACK SIDE STYLING
     &__cta {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        @include a.mixins-absCenter;
+
         width: 90%;
         text-align: center;
     }

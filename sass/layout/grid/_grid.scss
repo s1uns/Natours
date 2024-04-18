@@ -6,6 +6,15 @@
 
     &:not(:last-child) {
         margin-bottom: a.$variables-gutter-vertical;
+
+        @include a.mixins-respond(tab-port) {
+            margin-bottom: a.$variables-gutter-vertical-small;
+        }
+    }
+
+    @include a.mixins-respond(tab-port) {
+        max-width: 50rem;
+        padding: 0 3rem;
     }
 
     @include a.mixins-clearfix;
@@ -15,6 +24,15 @@
 
         &:not(:last-child) {
             margin-right: a.$variables-gutter-horizontal;
+
+            @include a.mixins-respond(tab-port) {
+                margin-right: 0;
+                margin-bottom: a.$variables-gutter-vertical-small;
+            }
+        }
+
+        @include a.mixins-respond(tab-port) {
+            width: 100% !important;
         }
     }
 

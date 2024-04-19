@@ -11,6 +11,16 @@
     padding-left: 9rem;
     transform: skew(-12deg);
 
+    @include a.mixins-respond(tab-port) {
+        width: 100%;
+        padding: 4rem;
+        padding-left: 7rem;
+    }
+
+    @include a.mixins-respond(phone) {
+        transform: skew(0);
+    }
+
     &:hover &__caption {
         transform: translate(-50%, -50%);
         opacity: 1;
@@ -31,6 +41,10 @@
         clip-path: circle(50% at 50% 50%);
         transform: translateX(-3rem) skew(12deg);
         position: relative;
+
+        @include a.mixins-respond(phone) {
+            transform: translateX(-3rem) skew(0);
+        }
     }
 
     &__img {
@@ -43,6 +57,10 @@
 
     &__text {
         transform: skew(12deg);
+
+        @include a.mixins-respond(phone) {
+            transform: skew(0);
+        }
     }
 
     &__caption {

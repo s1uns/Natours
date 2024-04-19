@@ -3,6 +3,10 @@
     background-color: a.$variables-color-grey-light-1;
     padding: 25rem 0;
     margin-top: -20vh;
+
+    @include a.mixins-respond(tab-port) {
+        padding: 20rem 0;
+    }
 }
 
 .section-features {
@@ -22,17 +26,29 @@
     & > * {
         transform: skewY(7deg);
     }
+
+    @include a.mixins-respond(tab-port) {
+        padding: 10rem 0;
+    }
 }
 
 .section-tours {
     background-color: a.$variables-color-grey-light-1;
     padding: 25rem 0 15rem 0;
     margin-top: -10rem;
+
+    @include a.mixins-respond(tab-port) {
+        padding: 20rem 0 10rem 0;
+    }
 }
 
 .section-stories {
     padding: 15rem 0;
     position: relative;
+
+    @include a.mixins-respond(tab-port) {
+        padding: 10rem 0;
+    }
 }
 
 .section-booking {
@@ -42,6 +58,10 @@
         rgba(a.$variables-color-primary-light, 0.8),
         rgba(a.$variables-color-primary-dark, 0.8)
     );
+
+    @include a.mixins-respond(tab-port) {
+        padding: 10rem 0;
+    }
 }
 
 .booking {
@@ -52,12 +72,39 @@
             transparent 50%
         ),
         url("../../img/nat-10.jpg");
-    height: 50rem;
     border-radius: a.$variables-default-border-radius;
     box-shadow: 0 1.5rem 4rem rgba(a.$variables-color-black, 0.2);
+
+    @include a.mixins-respond(tab-land) {
+        background-image: linear-gradient(
+                105deg,
+                rgba(a.$variables-color-white, 0.7) 70%,
+                transparent 70%
+            ),
+            url("../../img/nat-10.jpg");
+        background-size: cover;
+    }
+
+    @include a.mixins-respond(tab-port) {
+        background-image: linear-gradient(
+                to right,
+                rgba(a.$variables-color-white, 0.9) 0%,
+                rgba(a.$variables-color-white, 0.9) 100%
+            ),
+            url("../../img/nat-10.jpg");
+        background-size: cover;
+    }
 
     &__form {
         width: 50%;
         padding: 6rem;
+
+        @include a.mixins-respond(tab-land) {
+            width: 65%;
+        }
+
+        @include a.mixins-respond(tab-port) {
+            width: 100%;
+        }
     }
 }

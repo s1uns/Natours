@@ -511,10 +511,25 @@ body {
   outline: 1.5rem solid #55c57a;
   transform: scale(1.05) translateY(-0.5rem);
   box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
-  z-index: 20;
+  z-index: index none;
+}
+@media (max-width: 75em) {
+  .composition__photo:hover {
+    outline: none;
+    transform: scale(1) translateY(0);
+    transition: none;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+  }
 }
 .composition:hover .composition__photo:not(:hover) {
   transform: scale(0.95);
+}
+@media (max-width: 75em) {
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(1);
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    transition: none;
+  }
 }
 
 .feature-box {

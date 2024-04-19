@@ -51,11 +51,24 @@
             outline: 1.5rem solid a.$variables-color-primary;
             transform: scale(1.05) translateY(-0.5rem);
             box-shadow: 0 2.5rem 4rem rgba(a.$variables-color-black, 0.5);
-            z-index: 20;
+            z-index: index none;
+
+            @include a.mixins-respond(tab-land) {
+                outline: none;
+                transform: scale(1) translateY(0);
+                transition: none;
+                box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+            }
         }
     }
 
     &:hover &__photo:not(:hover) {
         transform: scale(0.95);
+
+        @include a.mixins-respond(tab-land) {
+            transform: scale(1);
+            box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+            transition: none;
+        }
     }
 }

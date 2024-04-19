@@ -52,23 +52,42 @@
             transform: scale(1.05) translateY(-0.5rem);
             box-shadow: 0 2.5rem 4rem rgba(a.$variables-color-black, 0.5);
             z-index: index none;
-
-            @include a.mixins-respond(tab-land) {
-                outline: none;
-                transform: scale(1) translateY(0);
-                transition: none;
-                box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
-            }
         }
     }
 
     &:hover &__photo:not(:hover) {
         transform: scale(0.95);
+    }
 
-        @include a.mixins-respond(tab-land) {
-            transform: scale(1);
-            box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    @include a.mixins-respond(tab-land) {
+        &__photo:hover {
+            outline: none;
             transition: none;
+            box-shadow: 0 1.5rem 3rem rgba(a.$variables-color-black, 0.2);
+        }
+        &__photo--p1:hover {
+            transform: scale(1.2) translateY(0);
+        }
+        &__photo--p2:hover {
+            transform: scale(1.3) translateY(0);
+        }
+        &__photo--p3:hover {
+            transform: scale(1.1) translateY(0);
+        }
+
+        &:hover &__photo:not(:hover) {
+            box-shadow: 0 1.5rem 3rem rgba(a.$variables-color-black, 0.2);
+            transition: none;
+        }
+
+        &:hover &__photo--p1:not(:hover) {
+            transform: scale(1.2);
+        }
+        &:hover &__photo--p2:not(:hover) {
+            transform: scale(1.3);
+        }
+        &:hover &__photo--p3:not(:hover) {
+            transform: scale(1.1);
         }
     }
 }

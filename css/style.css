@@ -513,22 +513,36 @@ body {
   box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
   z-index: index none;
 }
-@media (max-width: 75em) {
-  .composition__photo:hover {
-    outline: none;
-    transform: scale(1) translateY(0);
-    transition: none;
-    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
-  }
-}
 .composition:hover .composition__photo:not(:hover) {
   transform: scale(0.95);
 }
 @media (max-width: 75em) {
-  .composition:hover .composition__photo:not(:hover) {
-    transform: scale(1);
-    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+  .composition__photo:hover {
+    outline: none;
     transition: none;
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+  }
+  .composition__photo--p1:hover {
+    transform: scale(1.2) translateY(0);
+  }
+  .composition__photo--p2:hover {
+    transform: scale(1.3) translateY(0);
+  }
+  .composition__photo--p3:hover {
+    transform: scale(1.1) translateY(0);
+  }
+  .composition:hover .composition__photo:not(:hover) {
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+    transition: none;
+  }
+  .composition:hover .composition__photo--p1:not(:hover) {
+    transform: scale(1.2);
+  }
+  .composition:hover .composition__photo--p2:not(:hover) {
+    transform: scale(1.3);
+  }
+  .composition:hover .composition__photo--p3:not(:hover) {
+    transform: scale(1.1);
   }
 }
 
